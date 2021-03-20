@@ -51,5 +51,23 @@ python train_raf-db.py
 ![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png)
 
 
+# Citation
+If you use the sample code or part of it in your research, please cite the following:
+
+**@ARTICLE{2021arXiv210310189S,
+       author = {{Shi}, Jiawei and {Zhu}, Songhao},
+        title = "{Learning to Amend Facial Expression Representation via De-albino and Affinity}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Computer Vision and Pattern Recognition},
+         year = 2021,
+        month = mar,
+          eid = {arXiv:2103.10189},
+        pages = {arXiv:2103.10189},
+archivePrefix = {arXiv},
+       eprint = {2103.10189},
+ primaryClass = {cs.CV},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2021arXiv210310189S},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}**
 
 
