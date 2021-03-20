@@ -24,6 +24,11 @@ and 71.38% on FER2013, exceeding current state-of-theart methods.
 
 ![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/Net.png)
 
+Overview of Amend Representation Module (ARM). The ARM composed of three blocks replaces the pooling layer
+of CNN. The solid arrows indicate the processing flow of one feature map, and the dotted arrows refer to the auxiliary flow of
+a batch. It should be noted that the relationship between the two channels requires the de-albino kernel to be single-channel
+and unique.
+
 ## Train
 - Requirements
 
