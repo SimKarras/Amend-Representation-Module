@@ -48,6 +48,7 @@ python train_raf-db.py
 
 - Result
 
-              ![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png)
+<div align=center><img width="150" height="150" src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png"/></div>
+![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png)
 
 
