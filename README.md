@@ -35,8 +35,7 @@ and unique.
 
 ### AssigningWeights by Means of Convolution
 
-![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/perception.png)
-<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/perception.png" width="750" height="550" /></div>
+<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/perception.png" width="450" height="450" /></div>
 
 ## Train
 - Requirements
