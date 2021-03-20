@@ -18,7 +18,7 @@ the weight of eroded features to offset the side effect of padding, and 2) shari
 to strengthen the representation learning. In terms of data imbalance, we designed a minimal random resampling
 (MRR) scheme to suppress network overfitting. Experiments on public benchmarks prove that our ARM boosts the
 performance of FER remarkably. The validation accuracies are respectively **90.55%** on RAF-DB, **64.49%** on Affect-Net,
-and **71.38%** on FER2013, exceeding current state-of-theart methods.
+and **71.38%** on FER2013, exceeding current state-of-theart methods. The paper is submitted in [arXiv.org](https://arxiv.org/abs/2103.10189)
 
 ## Amend-Representation-Module
 
