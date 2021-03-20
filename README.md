@@ -29,14 +29,6 @@ of CNN. The solid arrows indicate the processing flow of one feature map, and th
 a batch. It should be noted that the relationship between the two channels requires the de-albino kernel to be single-channel
 and unique.
 
-### Feature Regularization
-
-<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/arrangement.png" width="520" height="180" /></div>
-
-### AssigningWeights by Means of Convolution
-
-<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/perception.png" width="300" height="300" /></div>
-
 ## Train
 - Requirements
 
