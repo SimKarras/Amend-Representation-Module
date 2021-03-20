@@ -41,7 +41,7 @@ and 71.38% on FER2013, exceeding current state-of-theart methods.
              ...
 ```
 - Training
-- ```
+```
 python train_raf-db.py
 ```
 
