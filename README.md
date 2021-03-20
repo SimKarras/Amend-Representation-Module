@@ -49,8 +49,9 @@ python train_raf-db.py
 ## Result
 - Confusion Matrix on RAF-DB
 
+<p align="center">
 ![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png)
-
+</p>
 
 # Citation
 If you use the sample code or part of it in your research, please cite the following:
