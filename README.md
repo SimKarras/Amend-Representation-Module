@@ -4,9 +4,6 @@
                                                     Nanjing, China
                                              {1319055608, zhush}@njupt.edu.cn
 
-## Amend-Representation-Module
-
-![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/Net.png)
 
 ## Abstract
   Facial Expression Recognition (FER) is a classification task that points to face variants. Hence, there are certain
@@ -22,6 +19,10 @@ to strengthen the representation learning. In terms of data imbalance, we design
 (MRR) scheme to suppress network overfitting. Experiments on public benchmarks prove that our ARM boosts the
 performance of FER remarkably. The validation accuracies are respectively 90.55% on RAF-DB, 64.49% on Affect-Net,
 and 71.38% on FER2013, exceeding current state-of-theart methods.
+
+## Amend-Representation-Module
+
+![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/Net.png)
 
 ## Train
 - Requirements
