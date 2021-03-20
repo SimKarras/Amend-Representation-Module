@@ -46,5 +46,8 @@ and 71.38% on FER2013, exceeding current state-of-theart methods.
 python train_raf-db.py
 ```
 
+- Result
+
+![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png)
 
 
