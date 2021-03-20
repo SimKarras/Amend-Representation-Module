@@ -31,7 +31,7 @@ and unique.
 
 ### Feature Regularization
 
-![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/arrangement.png)
+<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/arrangement.png" width="450" height="450" /></div>
 
 ### AssigningWeights by Means of Convolution
 
