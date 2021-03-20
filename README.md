@@ -56,7 +56,7 @@ python train_raf-db.py
 If you use the sample code or part of it in your research, please cite the following:
 
 ```
-**@ARTICLE{2021arXiv210310189S,
+@ARTICLE{2021arXiv210310189S,
        author = {{Shi}, Jiawei and {Zhu}, Songhao},
         title = "{Learning to Amend Facial Expression Representation via De-albino and Affinity}",
       journal = {arXiv e-prints},
@@ -70,7 +70,7 @@ archivePrefix = {arXiv},
  primaryClass = {cs.CV},
        adsurl = {https://ui.adsabs.harvard.edu/abs/2021arXiv210310189S},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-}**
+}
 ```
 
 
