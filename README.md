@@ -29,7 +29,7 @@ and 71.38% on FER2013, exceeding current state-of-theart methods.
   Torch 1.7.1, APEX 0.1, and torchvision 0.8.2.
 - Data Preparation
 
-  Download basic emotions dataset of [RAF-DB](http://www.whdeng.cn/RAF/model1.html#dataset), and make sure it have a structure like following:
+  Download [RAF-DB](http://www.whdeng.cn/RAF/model1.html#dataset) dataset, and make sure it have a structure like following:
  
 ```
 - datasets/raf-basic/
