@@ -62,7 +62,7 @@ python train_raf-db.py
 ## Result
 - Confusion Matrix on RAF-DB
 
-<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png" width="300" height="450" /></div>
+<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png" width="600" height="450" /></div>
 %![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png)
 
 
