@@ -31,11 +31,11 @@ and unique.
 
 ### Feature Regularization
 
-<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/arrangement.png" width="450" height="450" /></div>
+<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/arrangement.png" width="450" height="180" /></div>
 
 ### AssigningWeights by Means of Convolution
 
-<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/perception.png" width="450" height="450" /></div>
+<div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/perception.png" width="300" height="300" /></div>
 
 ## Train
 - Requirements
