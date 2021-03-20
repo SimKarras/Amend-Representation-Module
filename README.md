@@ -23,7 +23,27 @@ to strengthen the representation learning. In terms of data imbalance, we design
 performance of FER remarkably. The validation accuracies are respectively 90.55% on RAF-DB, 64.49% on Affect-Net,
 and 71.38% on FER2013, exceeding current state-of-theart methods.
 
-## Training
+## Train
+- Requirements
+
+  Torch 1.7.1, APEX 0.1, and torchvision 0.8.2.
+- Data Preparation
+
+  Download basic emotions dataset of [RAF-DB](http://www.whdeng.cn/RAF/model1.html#dataset), and make sure it have a structure like following:
+ 
 ```
+- datasets/raf-basic/
+         EmoLabel/
+             list_patition_label.txt
+         Image/aligned/
+	     train_00001_aligned.jpg
+             test_0001_aligned.jpg
+             ...
+```
+- Training
+- ```
 python train_raf-db.py
 ```
+
+
+
