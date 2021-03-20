@@ -47,7 +47,7 @@ python train_raf-db.py
 ```
 
 ## Result
-- Confusion Matrix
+- Confusion Matrix on RAF-DB
 
 ![image](https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png)
 
