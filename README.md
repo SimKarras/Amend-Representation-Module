@@ -51,7 +51,6 @@ and unique.
 python train_raf-db.py
 ```
 
-Pre-trained network on RAF-DB is stored as `*.pth` file on the [Google Cloud](https://drive.google.com/file/d/1pHfASV-Rc3Zh4ahFHRG0rUraqvAqt5cR/view).
 
 ## Result
 - Confusion Matrix on RAF-DB
