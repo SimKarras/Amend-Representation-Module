@@ -57,6 +57,8 @@ python train_raf-db.py
 
 <div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png" width="600" height="450" /></div>
 
+Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1uNK5Nf4bYzBGuQomp-eOa-_X-OrEugXx/view).
+
 
 # Citation
 If you use the sample code or part of it in your research, please cite the following:
