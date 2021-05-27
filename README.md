@@ -36,11 +36,10 @@ and unique.
   
   For APEX 0.1 (Linux):
   
-	  ```
 	  git clone https://github.com/NVIDIA/apex
 	  cd apex
 	  pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
-	  ```
+	  
 - Data Preparation
 
   Download [RAF-DB](http://www.whdeng.cn/RAF/model1.html#dataset) dataset, and make sure it have a structure like following:
