@@ -35,33 +35,34 @@ and unique.
   Torch 1.7.1, APEX 0.1, and torchvision 0.8.2.
   
   For APEX 0.1 (Linux):
-  ```
-  git clone https://github.com/NVIDIA/apex
-  cd apex
-  pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
-  ```
+  
+	  ```
+	  git clone https://github.com/NVIDIA/apex
+	  cd apex
+	  pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+	  ```
 - Data Preparation
 
   Download [RAF-DB](http://www.whdeng.cn/RAF/model1.html#dataset) dataset, and make sure it have a structure like following:
  
-```
-- datasets/raf-basic/
-         EmoLabel/
-             list_patition_label.txt
-         Image/aligned/
-	     train_00001_aligned.jpg
-             test_0001_aligned.jpg
-             ...
-```
+	```
+	- datasets/raf-basic/
+		 EmoLabel/
+		     list_patition_label.txt
+		 Image/aligned/
+		     train_00001_aligned.jpg
+		     test_0001_aligned.jpg
+		     ...
+	```
 - Training
-```
-python src/train_raf-db.py
-```
+	```
+	python src/train_raf-db.py
+	```
 
 - PyTorch distributed training
-```
-python -m torch.distributed.launch --nproc_per_node=ngpu --master_addr=127.0.0.1 --master_port=29500 src/train_raf-db_DDP.py
-```
+	```
+	python -m torch.distributed.launch --nproc_per_node=ngpu --master_addr=127.0.0.1 --master_port=29500 src/train_raf-db_DDP.py
+	```
 
 
 ## Result
