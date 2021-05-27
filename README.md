@@ -58,6 +58,11 @@ and unique.
 python train_raf-db.py
 ```
 
+- PyTorch distributed training
+```
+python -m torch.distributed.launch --nproc_per_node=ngpu --master_addr=127.0.0.1 --master_port=29500 src/train_raf-db_DDP.py
+```
+
 
 ## Result
 - Confusion Matrix on RAF-DB
