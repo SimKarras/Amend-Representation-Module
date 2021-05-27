@@ -55,7 +55,7 @@ and unique.
 ```
 - Training
 ```
-python train_raf-db.py
+python src/train_raf-db.py
 ```
 
 - PyTorch distributed training
