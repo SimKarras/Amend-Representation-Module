@@ -115,8 +115,7 @@ def run_training():
 
     if args.pretrained:
         print("Loading pretrained weights...", args.pretrained) 
-        pretrained = torch.load(args.pretrained)
-        pretrained_state_dict = pretrained
+        pretrained_state_dict = torch.load(args.pretrained, map_location=lambda storage, loc: storage)
         model_state_dict = model.state_dict()
         loaded_keys = 0
         total_keys = 0
