@@ -120,13 +120,10 @@ def run_training():
         loaded_keys = 0
         total_keys = 0
         for key in pretrained_state_dict:
-            if  ((key=='fc.weight')|(key=='fc.bias')):
-                pass
-            else:    
-                model_state_dict[key] = pretrained_state_dict[key]
-                total_keys+=1
-                if key in model_state_dict:
-                    loaded_keys+=1
+            model_state_dict[key] = pretrained_state_dict[key]
+            total_keys+=1
+            if key in model_state_dict:
+                loaded_keys+=1
         print("Loaded params num:", loaded_keys)
         print("Total params num:", total_keys)
         model.load_state_dict(model_state_dict, strict = False)
