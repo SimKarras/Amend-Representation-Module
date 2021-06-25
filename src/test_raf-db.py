@@ -69,7 +69,6 @@ class RafDataSet(data.Dataset):
 def test():
     args = parse_args()
     model = Networks.ResNet18_ARM___RAF()
-    print("batch_size:", args.batch_size)
 
     print("Loading pretrained weights...", args.checkpoint)
     checkpoint = torch.load(args.checkpoint)
