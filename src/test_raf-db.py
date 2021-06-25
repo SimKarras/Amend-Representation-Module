@@ -9,6 +9,7 @@ import os, torch
 import image_utils
 import argparse, random
 import Networks
+from dataset import RafDataSet
 
 
 def parse_args():
