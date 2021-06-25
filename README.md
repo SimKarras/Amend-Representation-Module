@@ -69,12 +69,17 @@ and unique.
 
 - Test
 
-   Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1v5j0WUxOMeDXOFBVIJaDSnGdYef3KSxO/view?usp=sharing).
+	Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1v5j0WUxOMeDXOFBVIJaDSnGdYef3KSxO/view?usp=sharing).
 	
 	```
 	python src/test_raf-db.py --checkpoint models/RAF-DB/epoch59_acc0.9205.pth
 	```
-
+   	
+- Test and plot Confusion Matrix
+	
+	```
+	python src/test_raf-db.py --checkpoint models/RAF-DB/epoch59_acc0.9205.pth --plot_cm
+	```
 
 # Citation
 If you use the sample code or part of it in your research, please cite the following:
