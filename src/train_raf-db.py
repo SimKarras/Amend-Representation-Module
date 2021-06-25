@@ -13,9 +13,7 @@ from dataset import RafDataSet
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--raf_path', type=str, default='./datasets/raf-basic/', help='Raf-DB dataset path.')
-    parser.add_argument('--checkpoint', type=str, default=None, help='Pytorch checkpoint file path')
-    parser.add_argument('--pretrained', type=str, default=None, help='Pretrained weights')
-    # parser.add_argument('--pretrained', type=str, default='models/resnet18-5c106cde.pth', help='Pretrained weights')
+    parser.add_argument('-c', '--checkpoint', type=str, default=None, help='Pytorch checkpoint file path')
     parser.add_argument('--batch_size', type=int, default=256, help='Batch size.')
     parser.add_argument('--optimizer', type=str, default="adam", help='Optimizer, adam or sgd.')
     parser.add_argument('--lr', type=float, default=0.01, help='Initial learning rate for sgd.')
@@ -32,21 +30,10 @@ def run_training():
     # print(model)
     print("batch_size:", args.batch_size)
             
-    if args.pretrained:
-        print("Loading pretrained weights...", args.pretrained) 
-        pretrained = torch.load(args.pretrained)
-        pretrained_state_dict = pretrained
-        model_state_dict = model.state_dict()
-        loaded_keys = 0
-        total_keys = 0
-        for key in pretrained_state_dict: 
-            model_state_dict[key] = pretrained_state_dict[key]
-            total_keys+=1
-            if key in model_state_dict:
-                loaded_keys+=1
-        print("Loaded params num:", loaded_keys)
-        print("Total params num:", total_keys)
-        model.load_state_dict(model_state_dict, strict = False)
+    if args.checkpoint:
+        print("Loading pretrained weights...", args.checkpoint)
+        checkpoint = torch.load(args.checkpoint)
+        model.load_state_dict(checkpoint["model_state_dict"], strict=False)
         
     data_transforms = transforms.Compose([
         transforms.ToPILImage(),
