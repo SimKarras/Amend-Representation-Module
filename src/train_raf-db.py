@@ -21,11 +21,15 @@ def parse_args():
     parser.add_argument('--momentum', default=0.9, type=float, help='Momentum for sgd')
     parser.add_argument('--workers', default=4, type=int, help='Number of data loading workers (default: 4)')
     parser.add_argument('--epochs', type=int, default=70, help='Total training epochs.')
+    parser.add_argument('--wandb', action='store_true')
     return parser.parse_args()
 
         
 def run_training():
     args = parse_args()
+    if args.wandb:
+        import wandb
+        wandb.init(project='raf-db')
 
     model = Networks.ResNet18_ARM___RAF()
     # print(model)
@@ -72,6 +76,9 @@ def run_training():
         optimizer = torch.optim.Adam(params, weight_decay=1e-4)
     elif args.optimizer == 'sgd':
         optimizer = torch.optim.SGD(params, args.lr, momentum=args.momentum, weight_decay=1e-4)
+        if args.wandb:
+            config = wandb.config
+            config.learning_rate = args.lr
     else:
         raise ValueError("Optimizer not supported.")
     print(optimizer)
@@ -108,14 +115,14 @@ def run_training():
             correct_sum += correct_num
                 
 
-        acc = correct_sum.float() / float(train_dataset.__len__())
+        train_acc = correct_sum.float() / float(train_dataset.__len__())
         train_loss = train_loss/iter_cnt
         print('[Epoch %d] Training accuracy: %.4f. Loss: %.3f LR: %.6f' %
-              (i, acc, train_loss, optimizer.param_groups[0]["lr"]))
+              (i, train_acc, train_loss, optimizer.param_groups[0]["lr"]))
         scheduler.step()
 
         with torch.no_grad():
-            running_loss = 0.0
+            val_loss = 0.0
             iter_cnt = 0
             bingo_cnt = 0
             model.eval()
@@ -126,25 +133,35 @@ def run_training():
                 CE_loss = CE_criterion(outputs, targets)
                 loss = CE_loss
 
-                running_loss += loss
+                val_loss += loss
                 iter_cnt += 1
                 _, predicts = torch.max(outputs, 1)
                 correct_or_not = torch.eq(predicts, targets)
                 bingo_cnt += correct_or_not.sum().cpu()
                 
-            running_loss = running_loss/iter_cnt   
-            acc = bingo_cnt.float()/float(val_num)
-            acc = np.around(acc.numpy(), 4)
-            print("[Epoch %d] Validation accuracy:%.4f. Loss:%.3f" % (i, acc, running_loss))
+            val_loss = val_loss/iter_cnt
+            val_acc = bingo_cnt.float()/float(val_num)
+            val_acc = np.around(val_acc.numpy(), 4)
+            print("[Epoch %d] Validation accuracy:%.4f. Loss:%.3f" % (i, val_acc, val_loss))
 
-            if acc > 0.92 and acc > best_acc:
+            if args.wandb:
+                wandb.log(
+                    {
+                        "train_loss": train_loss,
+                        "train_acc": train_acc,
+                        "val_loss": val_loss,
+                        "val_acc": val_acc,
+                    }
+                )
+
+            if val_acc > 0.92 and val_acc > best_acc:
                 torch.save({'iter': i,
                             'model_state_dict': model.state_dict(),
                             'optimizer_state_dict': optimizer.state_dict(), },
-                           os.path.join('models/RAF-DB', "epoch" + str(i) + "_acc" + str(acc) + ".pth"))
+                           os.path.join('models/RAF-DB', "epoch" + str(i) + "_acc" + str(val_acc) + ".pth"))
                 print('Model saved.')
-            if acc > best_acc:
-                best_acc = acc
+            if val_acc > best_acc:
+                best_acc = val_acc
                 print("best_acc:" + str(best_acc))
 
             
