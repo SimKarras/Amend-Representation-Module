@@ -72,7 +72,7 @@ and unique.
    Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1v5j0WUxOMeDXOFBVIJaDSnGdYef3KSxO/view?usp=sharing).
 	
 	```
-	python src/test_raf-db.py --checkpoint 'checkpoint'
+	python src/test_raf-db.py --checkpoint models/RAF-DB/epoch59_acc0.9205.pth
 	```
 
 
