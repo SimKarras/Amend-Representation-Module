@@ -15,6 +15,7 @@ def parse_args():
     parser.add_argument('--raf_path', type=str, default='./datasets/raf-basic/', help='Raf-DB dataset path.')
     parser.add_argument('-c', '--checkpoint', type=str, default=None, help='Pytorch checkpoint file path')
     parser.add_argument('--batch_size', type=int, default=256, help='Batch size.')
+    parser.add_argument('--val_batch_size', type=int, default=64, help='Batch size for validation.')
     parser.add_argument('--optimizer', type=str, default="adam", help='Optimizer, adam or sgd.')
     parser.add_argument('--lr', type=float, default=0.01, help='Initial learning rate for sgd.')
     parser.add_argument('--momentum', default=0.9, type=float, help='Momentum for sgd')
@@ -61,7 +62,7 @@ def run_training():
     print('Validation set size:', val_num)
     
     val_loader = torch.utils.data.DataLoader(val_dataset,
-                                               batch_size=args.batch_size,
+                                               batch_size=args.val_batch_size,
                                                num_workers=args.workers,
                                                shuffle=False,
                                                pin_memory=True)
@@ -136,7 +137,7 @@ def run_training():
             acc = np.around(acc.numpy(), 4)
             print("[Epoch %d] Validation accuracy:%.4f. Loss:%.3f" % (i, acc, running_loss))
 
-            if acc > 0.90 and acc > best_acc:
+            if acc > 0.92 and acc > best_acc:
                 torch.save({'iter': i,
                             'model_state_dict': model.state_dict(),
                             'optimizer_state_dict': optimizer.state_dict(), },
