@@ -16,7 +16,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--raf_path', type=str, default='./datasets/raf-basic/', help='Raf-DB dataset path.')
     parser.add_argument('-c', '--checkpoint', type=str, default=None, help='Pytorch checkpoint file path')
-    parser.add_argument('-b', '--batch_size', type=int, default=256, help='Batch size.')
+    parser.add_argument('-b', '--batch_size', type=int, default=64, help='Batch size.')
     parser.add_argument('--workers', default=4, type=int, help='Number of data loading workers (default: 4)')
     return parser.parse_args()
     
