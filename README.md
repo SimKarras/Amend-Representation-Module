@@ -65,9 +65,11 @@ and unique.
 
 <div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png" width="600" height="450" /></div>
 
-Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1uNK5Nf4bYzBGuQomp-eOa-_X-OrEugXx/view).
 
--Test
+
+- Test
+        Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1uNK5Nf4bYzBGuQomp-eOa-_X-OrEugXx/view).
+	
 	```
 	python src/test_raf-db.py --checkpoint 'checkpoint'
 	```
