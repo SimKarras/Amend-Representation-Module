@@ -9,6 +9,8 @@ import os, torch
 import image_utils
 import argparse, random
 import Networks
+from sklearn.metrics import confusion_matrix
+from plot_confusion_matrix import plot_confusion_matrix
 from dataset import RafDataSet
 
 
@@ -18,6 +20,7 @@ def parse_args():
     parser.add_argument('-c', '--checkpoint', type=str, default=None, help='Pytorch checkpoint file path')
     parser.add_argument('-b', '--batch_size', type=int, default=64, help='Batch size.')
     parser.add_argument('--workers', default=4, type=int, help='Number of data loading workers (default: 4)')
+    parser.add_argument('-p', '--plot_cm', action="store_true", help="Ploting confusion matrix.")
     return parser.parse_args()
     
 class RafDataSet(data.Dataset):
@@ -91,6 +94,8 @@ def test():
 
     model = model.cuda()
 
+    pre_labels = []
+    gt_labels = []
     with torch.no_grad():
         bingo_cnt = 0
         model.eval()
@@ -99,11 +104,19 @@ def test():
             targets = targets.cuda()
             _, predicts = torch.max(outputs, 1)
             correct_or_not = torch.eq(predicts, targets)
+            pre_labels += predicts.cpu().tolist()
+            gt_labels += targets.cpu().tolist()
             bingo_cnt += correct_or_not.sum().cpu()
 
         acc = bingo_cnt.float() / float(test_size)
         acc = np.around(acc.numpy(), 4)
         print(f"Test accuracy: {acc:.4f}.")
+        
+    if args.plot_cm:
+        cm = confusion_matrix(gt_labels, pre_labels)
+        cm = np.array(cm)
+        labels_name = ['SU', 'FE', 'DI', 'HA', 'SA', 'AN', "NE"]  # 横纵坐标标签
+        plot_confusion_matrix(cm, labels_name, 'RAF-DB', acc)
 
 
 if __name__ == "__main__":                    
