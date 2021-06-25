@@ -58,10 +58,6 @@ and unique.
 	python src/train_raf-db.py
 	```
 
-- PyTorch distributed training
-	```
-	python -m torch.distributed.launch --nproc_per_node=ngpu --master_addr=127.0.0.1 --master_port=29500 src/train_raf-db_DDP.py
-	```
 
 
 ## Result
@@ -70,6 +66,11 @@ and unique.
 <div align=center><img src="https://github.com/sunmusik/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png" width="600" height="450" /></div>
 
 Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1uNK5Nf4bYzBGuQomp-eOa-_X-OrEugXx/view).
+
+-Test
+	```
+	python src/test_raf-db.py --checkpoint 'checkpoint'
+	```
 
 
 # Citation
