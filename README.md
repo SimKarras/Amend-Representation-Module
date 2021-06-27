@@ -17,8 +17,8 @@ with a pooling layer. ARM efficiently enhances facial expression representation 
 the weight of eroded features to offset the side effect of padding, and 2) sharing affinity features over minibatch
 to strengthen the representation learning. In terms of data imbalance, we designed a minimal random resampling
 (MRR) scheme to suppress network overfitting. Experiments on public benchmarks prove that our ARM boosts the
-performance of FER remarkably. The validation accuracies are respectively **92.05%** on RAF-DB, **64.49%** on Affect-Net,
-and **71.38%** on FER2013, exceeding current state-of-theart methods. The paper has been submitted in [arXiv.org](https://arxiv.org/abs/2103.10189).
+performance of FER remarkably. The validation accuracies are respectively **92.05%** on RAF-DB, **65.2%** on Affect-Net,
+and **58.71%** on SFEW, exceeding current state-of-theart methods. The paper has been submitted in [arXiv.org](https://arxiv.org/abs/2103.10189).
 
 ## Amend-Representation-Module
 
