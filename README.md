@@ -59,15 +59,7 @@ and unique.
 	```
 
 
-
-## Result
-- Confusion Matrix on RAF-DB
-
-<div align=center><img src="https://github.com/JiaweiShiCV/Amend-Representation-Module/blob/master/Confusion_matrix/raf-db/acc0.9205.png" width="600" height="450" /></div>
-
-
-
-- Test
+- Testing
 
 	Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1v5j0WUxOMeDXOFBVIJaDSnGdYef3KSxO/view?usp=sharing).
 	
@@ -75,11 +67,20 @@ and unique.
 	python src/test_raf-db.py --checkpoint models/RAF-DB/epoch59_acc0.9205.pth
 	```
    	
-- Test and plot Confusion Matrix
+- Testing and Confusion Matrix
 	
 	```
 	python src/test_raf-db.py --checkpoint models/RAF-DB/epoch59_acc0.9205.pth --plot_cm
 	```
+
+
+
+## Result
+- Confusion Matrix on RAF-DB
+
+<div align=center><img src="https://github.com/JiaweiShiCV/Amend-Representation-Module/blob/master/Confusion_matrix/raf-db/acc0.9205.png" width="600" height="450" /></div>
+
+
 
 # Citation
 If you use the sample code or part of it in your research, please cite the following:
