@@ -6,19 +6,7 @@
 
 
 ## Abstract
-  Facial Expression Recognition (FER) is a classification task that points to face variants. Hence, there are certain
-intimate relationships between facial expressions. We call them affinity features, which are barely taken into account
-by current FER algorithms. Besides, to capture the edge information of the image, Convolutional Neural Networks
-(CNNs) generally utilize a host of edge paddings. Although they are desirable, the feature map is deeply eroded after
-multi-layer convolution. We name what has formed in this process the albino features, which definitely weaken the representation
-of the expression. To tackle these challenges, we propose a novel architecture named Amend Representation
-Module (ARM). ARM is a substitute for the pooling layer. Theoretically, it could be embedded in any CNN
-with a pooling layer. ARM efficiently enhances facial expression representation from two different directions: 1) reducing
-the weight of eroded features to offset the side effect of padding, and 2) sharing affinity features over minibatch
-to strengthen the representation learning. In terms of data imbalance, we designed a minimal random resampling
-(MRR) scheme to suppress network overfitting. Experiments on public benchmarks prove that our ARM boosts the
-performance of FER remarkably. The validation accuracies are respectively **92.05%** on RAF-DB, **65.2%** on Affect-Net,
-and **58.71%** on SFEW, exceeding current state-of-theart methods. The paper has been submitted in [arXiv.org](https://arxiv.org/abs/2103.10189).
+  Facial Expression Recognition (FER) is a classification task that points to face variants. Hence, there are certain affinity features between facial expressions, receiving little attention in the FER literature. Convolution padding, despite helping capture the edge information, causes erosion of the feature map simultaneously. After multi-layer filling convolution, the output feature map named albino feature definitely weakens the representation of the expression. To tackle these challenges, we propose a novel architecture named Amending Representation Module (ARM). ARM is a substitute for the pooling layer. Theoretically, it can be embedded in the back end of any network to deal with the Padding Erosion. ARM efficiently enhances facial expression representation from two different directions: 1) reducing the weight of eroded features to offset the side effect of padding, and 2) decomposing facial features to simplify representation learning. In terms of data imbalance, we designed a minimal random resampling (MRR) scheme to suppress network overfitting. Experiments on public benchmarks prove that our ARM boosts the performance of FER remarkably. The validation accuracies are respectively **90.42%** on RAF-DB, **65.2%** on Affect-Net, and **58.71%** on SFEW, exceeding current state-of-theart methods. The paper has been submitted in [arXiv.org](https://arxiv.org/abs/2103.10189).
 
 ## Amend-Representation-Module
 
@@ -60,17 +48,15 @@ and unique.
 
 
 - Testing
-
-	Pre-trained networks are stored as `*.pth` files on the [Google Drive](https://drive.google.com/file/d/1v5j0WUxOMeDXOFBVIJaDSnGdYef3KSxO/view?usp=sharing).
 	
 	```
-	python src/test_raf-db.py --checkpoint models/RAF-DB/epoch59_acc0.9205.pth
+	python src/test_raf-db.py --checkpoint *.pth
 	```
    	
 - Testing and Confusion Matrix
 	
 	```
-	python src/test_raf-db.py --checkpoint models/RAF-DB/epoch59_acc0.9205.pth --plot_cm
+	python src/test_raf-db.py --checkpoint *.pth --plot_cm
 	```
 
 
@@ -78,7 +64,7 @@ and unique.
 ## Result
 - Confusion Matrix on RAF-DB
 
-<div align=center><img src="https://github.com/JiaweiShiCV/Amend-Representation-Module/blob/master/Confusion_matrix/raf-db/acc0.9205.png" width="600" height="450" /></div>
+<div align=center><img src="https://github.com/JiaweiShiCV/Amend-Representation-Module/blob/master/imgs/acc_rafdb.png" width="600" height="450" /></div>
 
 
 
